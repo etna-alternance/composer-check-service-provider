@@ -1,0 +1,36 @@
+{
+    "name": "etna/check-service-provider",
+    "description": "Check Service Provider",
+    "keywords": ["check", "silex"],
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "ETNA",
+            "email": "dev@etna-alternance.net",
+            "homepage": "http://etna-alternance.net"
+        }
+    ],
+    "require": {
+        "php": ">=5.4",
+        "silex/silex": "1.*@dev"
+    },
+    "config": {
+        "bin-dir": "bin"
+    },
+    "autoload": {
+        "psr-0": {
+            "ETNA\\Silex\\Provider\\Check": "src"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    },
+    "repositories": [
+       {
+           "type": "composer",
+           "url": "http://composer.etna-alternance.net"
+       }
+   ]
+}
