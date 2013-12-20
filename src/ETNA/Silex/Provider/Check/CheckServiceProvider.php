@@ -3,23 +3,14 @@
 namespace ETNA\Silex\Provider\Check;
 
 use Silex\Application;
-use Silex\ServiceProviderInterface;
 use Silex\ControllerProviderInterface;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
  *
  */
-class CheckServiceProvider implements ServiceProviderInterface, ControllerProviderInterface
+class CheckServiceProvider implements ControllerProviderInterface
 {
-    public function boot(Application $app)
-    {
-    }
-
-    public function register(Application $app)
-    {
-    }
-
     public function connect(Application $app)
     {
         $controllers = $app['controllers_factory'];
