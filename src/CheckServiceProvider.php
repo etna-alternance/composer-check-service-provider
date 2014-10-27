@@ -15,7 +15,7 @@ class CheckServiceProvider implements ControllerProviderInterface
     {
         $controllers = $app['controllers_factory'];
 
-        $controllers->match("/check", function (Request $req) use ($app) {
+        $controllers->match("/check", function () use ($app) {
             return $app->json( array( "status" => "OK" ), 200);
         });
 
