@@ -4,7 +4,6 @@ namespace ETNA\Silex\Provider\Check;
 
 use Silex\Application;
 use Silex\ControllerProviderInterface;
-use Symfony\Component\HttpFoundation\Request;
 
 /**
  *
