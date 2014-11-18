@@ -6,7 +6,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\HttpKernelInterface;
 
-putenv("APPLICATION_ENV=" . (getenv("APPLICATION_ENV") ?: "testing"));
+putenv("APPLICATION_ENV=" . (false !== getenv("APPLICATION_ENV") ?: "testing"));
 
 use ETNA\FeatureContext as EtnaFeatureContext;
 
@@ -18,6 +18,7 @@ class FeatureContext extends BehatContext
     use EtnaFeatureContext\Check;
     use EtnaFeatureContext\SilexApplication;
     use EtnaFeatureContext\setUpScenarioDirectories;
+    use EtnaFeatureContext\Coverage;
 
     static private $_parameters;
 
@@ -48,7 +49,7 @@ class FeatureContext extends BehatContext
     {
         if ($body !== null) {
             $body = @file_get_contents($this->requests_path . $body);
-            if (!$body) {
+            if (false === $body) {
                 throw new Exception("File not found : {$this->requests_path}${body}");
             }
         }
@@ -148,9 +149,9 @@ class FeatureContext extends BehatContext
         }
 
         $this->check($result, $this->data, "result", $errors);
-        if ($n = count($errors)) {
+        if (($nb_errors = count($errors)) > 0) {
             echo json_encode($this->data, JSON_PRETTY_PRINT);
-            throw new Exception("{$n} errors :\n" . implode("\n", $errors));
+            throw new Exception("{$nb_errors} errors :\n" . implode("\n", $errors));
         }
     }
 }

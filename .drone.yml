@@ -1,0 +1,20 @@
+image: etna/drone-php
+env:
+  - APPLICATION_ENV=drone
+  - AUTH_URL="file://$(pwd)/tmp/keys/"
+  - AUTH_COOKIE_EXPIRATION="+10minutes"
+  - COVERALLS_REPO_TOKEN={{coverallsToken}}
+  - COVERALLS_SERVICE_NAME=drone.io
+script:
+  - composer install --dev --prefer-source
+  - bin/behat -p ci
+  - bin/coveralls
+notify:
+  slack:
+    team: {{slackTeam}}
+    channel: {{slackChannel}}
+    username: drone
+    token: {{slackToken}}
+    on_started: true
+    on_failure: true
+    on_success: true

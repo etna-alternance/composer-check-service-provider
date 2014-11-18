@@ -1,6 +1,7 @@
 check-service-provider
 ======================
 
+[![Build Status](http://drone.etna-alternance.net/github.com/etna-alternance/composer-check-service-provider/status.svg?branch=master)](http://drone.etna-alternance.net/github.com/etna-alternance/composer-check-service-provider)
 [![Dependency Status](https://www.versioneye.com/user/projects/53dde6f08e78abc191000044/badge.svg)](https://www.versioneye.com/user/projects/53dde6f08e78abc191000044)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/etna-alternance/composer-check-service-provider/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/etna-alternance/composer-check-service-provider/?branch=master)
 
