@@ -3,7 +3,7 @@
 namespace ETNA\Silex\Provider\Check;
 
 use Silex\Application;
-use Silex\ControllerProviderInterface;
+use Silex\Api\ControllerProviderInterface;
 
 /**
  *
